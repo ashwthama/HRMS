@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRMS.Controllers
@@ -11,6 +12,12 @@ namespace HRMS.Controllers
         public string GetUser()
         {
             return "User";
+        }
+
+        [HttpPost]
+        public IActionResult AddEmployeeData([FromBody] Employee employee)
+        {
+            return Ok(employee);
         }
     }
 }
